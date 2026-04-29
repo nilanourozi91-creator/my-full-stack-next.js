@@ -16,4 +16,4 @@ interface images{
     img_url:string[],
 }
 
-// export  interface prodectinfo=
+export  interface prodectinfo extends images, prodectD, prodect
