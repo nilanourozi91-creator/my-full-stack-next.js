@@ -9,7 +9,7 @@ export default async function Mine() {
   return (
     <div>
       <MySlider/>
-        <ProdectList list={list} title="New Arrivals" />
+        <ProdectList list={list.data} title="New Arrivals" />
     </div>
   )
 }

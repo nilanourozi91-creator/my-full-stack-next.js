@@ -13,6 +13,7 @@ function ProductList({ data, title }: { data: any; title?: string }) {
           {data.map((product: ProductInfo) => (
             <Product key={product.slug} product={product} />
           ))}
+          
         </div>
       ) : (
         <p>No product exists yet</p>
