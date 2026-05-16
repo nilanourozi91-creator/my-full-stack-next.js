@@ -5,16 +5,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ProdectPrice from './prodect-price'
 
-function ProdeactCard({ item }: { item: any }) {
+function ProdeactCard({ list }: { list: any }) {
   return (
     <Card className="group overflow-hidden rounded-2xl border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       {/* img-all*/}
       <CardHeader className="p-0 relative bg-cover object-cover">
 
-        <Link href={`prodect/${item.id}`}>
+        <Link href={`prodect/${list.id}`}>
           <div className="relative w-full h-[40vh]  object-cover overflow-hidden">
             <Image
-              src={`http://localhost:8000/storage/${item.imgall[0].img_url}`}
+              src={`http://localhost:8000/storage/${list.imgall[0].img_url}`}
               alt="product"
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -26,10 +26,10 @@ function ProdeactCard({ item }: { item: any }) {
         {/* stock-be */}
         <span
           className={`absolute top-3 left-3 text-xs px-2 py-1 rounded-full text-white ${
-            item.stock > 0 ? 'bg-green-500' : 'bg-red-500'
+            list.stock > 0 ? 'bg-green-500' : 'bg-red-500'
           }`}
         >
-          {item.stock > 0 ? 'In Stock' : 'Out'}
+          {list.stock > 0 ? 'In Stock' : 'Out of Stock'}
         </span>
       </CardHeader>
 
@@ -38,20 +38,20 @@ function ProdeactCard({ item }: { item: any }) {
         
         {/* BRAND */}
         <p className="text-xs text-gray-500 uppercase tracking-wide">
-          {item.prodect_d.brand}
+          {list.prodect_d.brand}
         </p>
 
         {/* NAME */}
         <h3 className="text-sm font-semibold line-clamp-2">
-          {item.name}
+          {list.name}
         </h3>
 
         {/* PRICE + STOCK */}
         <div className="flex items-center justify-between pt-2">
-          <ProdectPrice price={item.price.toString()} />
+          <ProdectPrice price={list.price.toString()} />
 
           <span className="text-xs text-gray-500">
-            {item.stock} pcs
+            {list.stock} pcs
           </span>
         </div>
 

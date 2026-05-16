@@ -28,7 +28,7 @@ function ProdectList({
         {list.map((item: any) => (
           <ProdeactCard
             key={item.id}
-            item={item}
+            list={item}
           />
         ))}
       </div>

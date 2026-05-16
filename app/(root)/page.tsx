@@ -10,6 +10,7 @@ export default async function Mine() {
     <div>
       <MySlider/>
         <ProdectList list={list.data} title="New Arrivals" />
+        
     </div>
   )
 }
